@@ -3,14 +3,15 @@ Next.js (App Router) - TMDB 映画アプリのファイル配置メモ
 
 プロジェクト構成（確認日時点）
 ------------------------------
-Next.js アプリのルート: movie-app/
+Next.js アプリのルート: c:\work\movie-app
 
-movie-app/
+c:\work\movie-app/
 ├── app/
 │   ├── layout.tsx
 │   ├── page.tsx      ← 現在の Home（/）
 │   └── globals.css
 ├── public/
+├── sutdy-doc/
 └── package.json
 
 ※ src/ ディレクトリはなし（create-next-app の推奨設定）
@@ -22,7 +23,7 @@ movie-app/
 
 | 項目           | 内容                                              |
 |----------------|---------------------------------------------------|
-| ファイルパス   | movie-app/app/api/movies/trending/route.ts        |
+| ファイルパス   | app/api/movies/trending/route.ts                  |
 | アクセス URL   | GET /api/movies/trending                          |
 
 app/api/ 以下に route.ts を置くのが App Router の標準。
@@ -38,8 +39,8 @@ Home の「ルート」と「表示用コンポーネント」は分けるのが
 
 | 役割               | ファイルパス                              | 説明                                   |
 |--------------------|-------------------------------------------|----------------------------------------|
-| Home ルート（/）   | movie-app/app/page.tsx                    | 既存ファイルを編集。一覧を import する |
-| 一覧 UI コンポーネント | movie-app/components/TrendingMovieList.tsx | 新規作成（components/ フォルダも新規） |
+| Home ルート（/）   | app/page.tsx                              | 既存ファイルを編集。一覧を import する |
+| 一覧 UI コンポーネント | components/TrendingMovieList.tsx       | 新規作成（components/ フォルダも新規） |
 
 page.tsx の例:
 
@@ -62,7 +63,7 @@ TrendingMovieList 内で fetch("/api/movies/trending") する場合は、
 
 - API キーは Route Handler 側だけで使い、.env.local（プロジェクトルート）に
   TMDB_API_KEY などを置く（クライアントに露出させない）
-- TMDB 呼び出しロジックは movie-app/lib/tmdb.ts に切り出すと route.ts が薄くなる（任意）
+- TMDB 呼び出しロジックは lib/tmdb.ts に切り出すと route.ts が薄くなる（任意）
 - App Router では Server Component で TMDB を直接 fetch する方法もよく使われる。
   今回のように「自前 API → フロント fetch」で学ぶ・分離する構成なら、
   上記の 2 ファイル + page.tsx で問題ない。
