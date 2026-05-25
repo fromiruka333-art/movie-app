@@ -16,4 +16,11 @@ export type {
   WatchProvidersJP,
   Genre,
 } from './types';
-export { getTrendingMovies, getPopularMovies, getMovieDetail } from './movies';
+export {
+  getTrendingMovies,
+  getPopularMovies,
+  getMovieDetail,
+  discoverMovies,
+} from './movies';
+export type { DiscoverOptions } from './movies';
+export { getMovieGenres } from './genres';

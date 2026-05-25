@@ -36,7 +36,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
         );
       })}
       <p className="mt-4 px-4 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
-        検索フィルタ（ジャンル・上映時間・サブスク）は検索画面で利用できます。
+        検索画面でジャンル・上映時間・サブスクを絞り込めます。
       </p>
     </nav>
   );
