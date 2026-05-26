@@ -1,0 +1,19 @@
+# 1. この自動化処理の名前（任意）
+name: GitHub Actions Demo
+
+# 2. どんなイベントが起きた時に動かすか
+on:
+  push:
+    branches:
+      - main  # mainブランチにPushされた時を指定（リポジトリがmasterの場合は master に変更してください）
+
+# 3. 具体的にどんな処理をさせるか
+jobs:
+  say-hello:
+    # 処理を実行する環境（GitHubが用意してくれるクラウド上のLinux PC）
+    runs-on: ubuntu-latest
+
+    # 実行する手順（ステップ）
+    steps:
+      - name: 画面に文字を出力する
+        run: echo "Hello, GitHub Actions!"
