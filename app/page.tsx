@@ -20,7 +20,7 @@ export default async function Home() {
           </p>
         </header>
 
-        <MovieSection title="今週のトレンド" movies={trending.results} />
+        <MovieSection title="今週のトレンド11" movies={trending.results} />
         <MovieSection title="人気の映画" movies={popular.results} />
       </div>
     </AppShell>
